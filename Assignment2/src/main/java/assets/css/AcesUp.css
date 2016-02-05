@@ -16,3 +16,13 @@ font-weight: bold;
 width: 100px;
 background-color:#F0F0F0;
 }
+
+.dropArea{
+    float: left;
+    outline-width: 1px;
+    width: 100px;
+    outline-color: black;
+    outline-style: dashed;
+    height: 145px;
+    margin: 20px;
+}
