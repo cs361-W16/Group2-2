@@ -102,25 +102,25 @@
 
 <div>
 
-    <div id="left" class="dropArea">
+    <div id="one" class="dropArea">
         <img src="/assets/images/2_of_hearts.png" id="Card3" style="width: 100px;">
         <img src="/assets/images/3_of_clubs.png" id="Card3" style="width: 100px;">
     </div>
 
-    <div id="right" class="dropArea">
+    <div id="two" class="dropArea">
         <img src="/assets/images/2_of_diamonds.png" id="Card3" style="width: 100px;">
         <img src="/assets/images/8_of_clubs.png" id="Card3" style="width: 100px;">
         <img src="/assets/images/9_of_clubs.png" id="Card3" style="width: 100px;">
         <img src="/assets/images/3_of_hearts.png" id="Card3" style="width: 100px;">
     </div>
 
-    <div id="left2" class="dropArea">
+    <div id="three" class="dropArea">
         <img src="/assets/images/2_of_clubs.png" id="Card3" style="width: 100px;">
         <img src="/assets/images/4_of_clubs.png" id="Card3" style="width: 100px;">
         <img src="/assets/images/4_of_diamonds.png" id="Card3" style="width: 100px;">
     </div>
 
-    <div id="right2" class="dropArea">
+    <div id="four" class="dropArea">
         <img src="/assets/images/2_of_spades.png" id="Card3" style="width: 100px;">
     </div>
 </div>
@@ -220,10 +220,7 @@
     });
     });
 
-    dragula([document.querySelector('#left'), document.querySelector('#right')]);
-    dragula([document.querySelector('#left2'), document.querySelector('#right2')]);
-    dragula([document.getElementById(left), document.getElementById(right)]);
-    dragula([document.getElementById(left2), document.getElementById(right2)]);
+    dragula([document.querySelector('#one'), document.querySelector('#two'),document.querySelector('#three'),document.querySelector('#four')]);
 
 
 </script>
