@@ -3,10 +3,19 @@
 <link href="/assets/css/AcesUp.css" rel="stylesheet">
 <script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
 
+
 <body>
 
 <script type="text/javascript" src="/assets/javascript/dragula.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/dragula.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+
+<script>
+    $( "#card10" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+</script>
 
 <table>
     <tr class="title">
@@ -18,23 +27,23 @@
 
     <tr><td class="columnOfCards" id="c0">
         <table>
-            <tr><td class="cardLocation l0"></td></tr>
-            <tr><td class="cardLocation l1"></td></tr>
-            <tr><td class="cardLocation l2"></td></tr>
-            <tr><td class="cardLocation l3"></td></tr>
-            <tr><td class="cardLocation l4"></td></tr>
-            <tr><td class="cardLocation l5"></td></tr>
-            <tr><td class="cardLocation l6"></td></tr>
-            <tr><td class="cardLocation l7"></td></tr>
-            <tr><td class="cardLocation l8"></td></tr>
-            <tr><td class="cardLocation l9"></td></tr>
-            <tr><td class="cardLocation l10"></td></tr>
-            <tr><td class="cardLocation l11"></td></tr>
-            <tr><td class="cardLocation l12"></td></tr>
-            <tr><td class="cardLocation l13"></td></tr>
+            <tr><td class="cardLocation l0" id="c10"></td></tr>
+            <tr><td class="cardLocation l1" id="c11"></td></tr>
+            <tr><td class="cardLocation l2" id="c12"></td></tr>
+            <tr><td class="cardLocation l3" id="c13"></td></tr>
+            <tr><td class="cardLocation l4" id="c14"></td></tr>
+            <tr><td class="cardLocation l5" id="c15"></td></tr>
+            <tr><td class="cardLocation l6" id="c16"></td></tr>
+            <tr><td class="cardLocation l7" id="c17"></td></tr>
+            <tr><td class="cardLocation l8" id="c18"></td></tr>
+            <tr><td class="cardLocation l9" id="c19"></td></tr>
+            <tr><td class="cardLocation l10" id="c110"></td></tr>
+            <tr><td class="cardLocation l11" id="c111"></td></tr>
+            <tr><td class="cardLocation l12" id="c112"></td></tr>
+            <tr><td class="cardLocation l13" id="c113"></td></tr>
         </table>
     </td>
-        <td class="columnOfCards" id="c1">
+        <td class="columnOfCards" id="c1" >
             <table>
                 <tr><td class="cardLocation l0"></td></tr>
                 <tr><td class="cardLocation l1"></td></tr>
@@ -91,8 +100,13 @@
     </tr>
 </table>
 
-<button id="dealButton">Deal</button>
-<BR>Remove from: <button id="Remove1">Column1</button><button id="Remove2">Column2</button><button id="Remove3">Column3</button><button id="Remove4">Column4</button>
+
+
+
+
+
+<button id="dealButton" style="margin-left:90%">Deal</button>
+<BR><button id="Remove1" >Column1 Remove</button><button id="Remove2" >Column2 Remove</button><button id="Remove3" >Column3 Remove</button><button id="Remove4" >Column4 Remove</button>
 
 <BR>Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton">Move</button>
 
@@ -126,6 +140,23 @@
 </div>
 
 <BR>
+
+<BR>
+
+<table>
+    <tr>
+        <td id="trash" style="width:100px; background-color: Blue; color: White;">Trash</td>
+    </tr>
+</table>
+
+
+<script>
+    dragula([document.querySelector('#c0'), document.querySelector('#trash')]);
+    dragula([document.querySelector('#c1'), document.querySelector('#trash')]);
+    dragula([document.querySelector('#c2'), document.querySelector('#trash')]);
+    dragula([document.querySelector('#c3'), document.querySelector('#trash')]);
+
+</script>
 
 <script>
 
@@ -221,6 +252,8 @@
     });
 
     dragula([document.querySelector('#one'), document.querySelector('#two'),document.querySelector('#three'),document.querySelector('#four')]);
+
+
 
 
 </script>
