@@ -90,3 +90,4 @@ background-color:#F0F0F0;
 .king-diamonds{ background-image: url(/assets/images/king_of_diamonds.png); background-size: contain; background-repeat: no-repeat; background-position: center;}
 .king-spades{ background-image: url(/assets/images/king_of_spades.png); background-size: contain; background-repeat: no-repeat; background-position: center;}
 .king-clubs{ background-image: url(/assets/images/king_of_clubs.png); background-size: contain; background-repeat: no-repeat; background-position: center;}
+}
