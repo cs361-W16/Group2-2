@@ -224,20 +224,681 @@
 
     $( '.columnOfCards .cardLocation' ).html("");
 
-        $.each(game.cols[0], function( key, val ) {
-            $( '#c0 .l'+key ).html(val.value + val.suit);
+     $.each(game.cols[0], function( key, val ) {
+       if (val.suit === 'Spades'){
+           if (val.value === 1){
+               $( '#c0 .l'+key ).addClass('ace-spades');
+           }
+           else if (val.value === 2){
+               $( '#c0 .l'+key ).addClass('two-spades');
+           }
+           if (val.value === 3){
+               $( '#c0 .l'+key ).addClass('three-spades');
+           }
+           if (val.value === 4){
+               $( '#c0 .l'+key ).addClass('four-spades');
+           }
+           if (val.value === 5){
+               $( '#c0 .l'+key ).addClass('five-spades');
+           }
+           if (val.value === 6){
+               $( '#c0 .l'+key ).addClass('six-spades');
+           }
+           if (val.value === 7){
+               $( '#c0 .l'+key ).addClass('seven-spades');
+           }
+           if (val.value === 8){
+               $( '#c0 .l'+key ).addClass('eight-spades');
+           }
+           if (val.value === 9){
+               $( '#c0 .l'+key ).addClass('nine-spades');
+           }
+           if (val.value === 10){
+               $( '#c0 .l'+key ).addClass('ten-spades');
+           }
+           if (val.value === 11){
+               $( '#c0 .l'+key ).addClass('jack-spades');
+           }
+           if (val.value === 12){
+               $( '#c0 .l'+key ).addClass('queen-spades');
+           }
+           if (val.value === 13){
+               $( '#c0 .l'+key ).addClass('king-spades');
+           }
+       }
+       if (val.suit === 'Hearts'){
+           if (val.value === 1){
+               $( '#c0 .l'+key ).addClass('ace-hearts');
+           }
+           if (val.value === 2){
+               $( '#c0 .l'+key ).addClass('two-hearts');
+           }
+           if (val.value === 3){
+               $( '#c0 .l'+key ).addClass('three-hearts');
+           }
+           if (val.value === 4){
+               $( '#c0 .l'+key ).addClass('four-hearts');
+           }
+           if (val.value === 5){
+               $( '#c0 .l'+key ).addClass('five-hearts');
+           }
+           if (val.value === 6){
+               $( '#c0 .l'+key ).addClass('six-hearts');
+           }
+           if (val.value === 7){
+               $( '#c0 .l'+key ).addClass('seven-hearts');
+           }
+           if (val.value === 8){
+               $( '#c0 .l'+key ).addClass('eight-hearts');
+           }
+           if (val.value === 9){
+               $( '#c0 .l'+key ).addClass('nine-hearts');
+           }
+           if (val.value === 10){
+               $( '#c0 .l'+key ).addClass('ten-hearts');
+           }
+           if (val.value === 11){
+               $( '#c0 .l'+key ).addClass('jack-hearts');
+           }
+           if (val.value === 12){
+               $( '#c0 .l'+key ).addClass('queen-hearts');
+           }
+           if (val.value === 13){
+               $( '#c0 .l'+key ).addClass('king-hearts');
+           }
+       }
+       if (val.suit === 'Diamonds'){
+           if (val.value === 1){
+               $( '#c0 .l'+key ).addClass('ace-diamonds');
+           }
+           if (val.value === 2){
+               $( '#c0 .l'+key ).addClass('two-diamonds');
+           }
+           if (val.value === 3){
+               $( '#c0 .l'+key ).addClass('three-diamonds');
+           }
+           if (val.value === 4){
+               $( '#c0 .l'+key ).addClass('four-diamonds');
+           }
+           if (val.value === 5){
+               $( '#c0 .l'+key ).addClass('five-diamonds');
+           }
+           if (val.value === 6){
+               $( '#c0 .l'+key ).addClass('six-diamonds');
+           }
+           if (val.value === 7){
+               $( '#c0 .l'+key ).addClass('seven-diamonds');
+           }
+           if (val.value === 8){
+               $( '#c0 .l'+key ).addClass('eight-diamonds');
+           }
+           if (val.value === 9){
+               $( '#c0 .l'+key ).addClass('nine-diamonds');
+           }
+           if (val.value === 10){
+               $( '#c0 .l'+key ).addClass('ten-diamonds');
+           }
+           if (val.value === 11){
+               $( '#c0 .l'+key ).addClass('jack-diamonds');
+           }
+           if (val.value === 12){
+               $( '#c0 .l'+key ).addClass('queen-diamonds');
+           }
+           if (val.value === 13){
+               $( '#c0 .l'+key ).addClass('king-diamonds');
+           }
+       }
+       if (val.suit === 'Clubs'){
+           if (val.value === 1){
+               $( '#c0 .l'+key ).addClass('ace-clubs');
+           }
+           if (val.value === 2){
+               $( '#c0 .l'+key ).addClass('two-clubs');
+           }
+           if (val.value === 3){
+               $( '#c0 .l'+key ).addClass('three-clubs');
+           }
+           if (val.value === 4){
+               $( '#c0 .l'+key ).addClass('four-clubs');
+           }
+           if (val.value === 5){
+               $( '#c0 .l'+key ).addClass('five-clubs');
+           }
+           if (val.value === 6){
+               $( '#c0 .l'+key ).addClass('six-clubs');
+           }
+           if (val.value === 7){
+               $( '#c0 .l'+key ).addClass('seven-clubs');
+           }
+           if (val.value === 8){
+               $( '#c0 .l'+key ).addClass('eight-clubs');
+           }
+           if (val.value === 9){
+               $( '#c0 .l'+key ).addClass('nine-clubs');
+           }
+           if (val.value === 10){
+               $( '#c0 .l'+key ).addClass('ten-clubs');
+           }
+           if (val.value === 11){
+               $( '#c0 .l'+key ).addClass('jack-clubs');
+           }
+           if (val.value === 12){
+               $( '#c0 .l'+key ).addClass('queen-clubs');
+           }
+           if (val.value === 13){
+               $( '#c0 .l'+key ).addClass('king-clubs');
+           }
+       }
         });
 
      $.each(game.cols[1], function( key, val ) {
-            $( '#c1 .l'+key ).html(val.value + val.suit);
+       if (val.suit === 'Spades'){
+           if (val.value === 1){
+               $( '#c1 .l'+key ).addClass('ace-spades');
+           }
+           else if (val.value === 2){
+               $( '#c1 .l'+key ).addClass('two-spades');
+           }
+           if (val.value === 3){
+               $( '#c1 .l'+key ).addClass('three-spades');
+           }
+           if (val.value === 4){
+               $( '#c1 .l'+key ).addClass('four-spades');
+           }
+           if (val.value === 5){
+               $( '#c1 .l'+key ).addClass('five-spades');
+           }
+           if (val.value === 6){
+               $( '#c1 .l'+key ).addClass('six-spades');
+           }
+           if (val.value === 7){
+               $( '#c1 .l'+key ).addClass('seven-spades');
+           }
+           if (val.value === 8){
+               $( '#c1 .l'+key ).addClass('eight-spades');
+           }
+           if (val.value === 9){
+               $( '#c1 .l'+key ).addClass('nine-spades');
+           }
+           if (val.value === 10){
+               $( '#c1 .l'+key ).addClass('ten-spades');
+           }
+           if (val.value === 11){
+               $( '#c1 .l'+key ).addClass('jack-spades');
+           }
+           if (val.value === 12){
+               $( '#c1 .l'+key ).addClass('queen-spades');
+           }
+           if (val.value === 13){
+               $( '#c1 .l'+key ).addClass('king-spades');
+           }
+       }
+       else if (val.suit === 'Hearts'){
+           if (val.value === 1){
+               $( '#c1 .l'+key ).addClass('ace-hearts');
+           }
+           if (val.value === 2){
+               $( '#c1 .l'+key ).addClass('two-hearts');
+           }
+           if (val.value === 3){
+               $( '#c1 .l'+key ).addClass('three-hearts');
+           }
+           if (val.value === 4){
+               $( '#c1 .l'+key ).addClass('four-hearts');
+           }
+           if (val.value === 5){
+               $( '#c1 .l'+key ).addClass('five-hearts');
+           }
+           if (val.value === 6){
+               $( '#c1 .l'+key ).addClass('six-hearts');
+           }
+           if (val.value === 7){
+               $( '#c1 .l'+key ).addClass('seven-hearts');
+           }
+           if (val.value === 8){
+               $( '#c1 .l'+key ).addClass('eight-hearts');
+           }
+           if (val.value === 9){
+               $( '#c1 .l'+key ).addClass('nine-hearts');
+           }
+           if (val.value === 10){
+               $( '#c1 .l'+key ).addClass('ten-hearts');
+           }
+           if (val.value === 11){
+               $( '#c1 .l'+key ).addClass('jack-hearts');
+           }
+           if (val.value === 12){
+               $( '#c1 .l'+key ).addClass('queen-hearts');
+           }
+           if (val.value === 13){
+               $( '#c1 .l'+key ).addClass('king-hearts');
+           }
+       }
+       else if (val.suit === 'Diamonds'){
+           if (val.value === 1){
+               $( '#c1 .l'+key ).addClass('ace-diamonds');
+           }
+           if (val.value === 2){
+               $( '#c1 .l'+key ).addClass('two-diamonds');
+           }
+           if (val.value === 3){
+               $( '#c1 .l'+key ).addClass('three-diamonds');
+           }
+           if (val.value === 4){
+               $( '#c1 .l'+key ).addClass('four-diamonds');
+           }
+           if (val.value === 5){
+               $( '#c1 .l'+key ).addClass('five-diamonds');
+           }
+           if (val.value === 6){
+               $( '#c1 .l'+key ).addClass('six-diamonds');
+           }
+           if (val.value === 7){
+               $( '#c1 .l'+key ).addClass('seven-diamonds');
+           }
+           if (val.value === 8){
+               $( '#c1 .l'+key ).addClass('eight-diamonds');
+           }
+           if (val.value === 9){
+               $( '#c1 .l'+key ).addClass('nine-diamonds');
+           }
+           if (val.value === 10){
+               $( '#c1 .l'+key ).addClass('ten-diamonds');
+           }
+           if (val.value === 11){
+               $( '#c1 .l'+key ).addClass('jack-diamonds');
+           }
+           if (val.value === 12){
+               $( '#c1 .l'+key ).addClass('queen-diamonds');
+           }
+           if (val.value === 13){
+               $( '#c1 .l'+key ).addClass('king-diamonds');
+           }
+       }
+       else if (val.suit === 'Clubs'){
+           if (val.value === 1){
+               $( '#c1 .l'+key ).addClass('ace-clubs');
+           }
+           if (val.value === 2){
+               $( '#c1 .l'+key ).addClass('two-clubs');
+           }
+           if (val.value === 3){
+               $( '#c1 .l'+key ).addClass('three-clubs');
+           }
+           if (val.value === 4){
+               $( '#c1 .l'+key ).addClass('four-clubs');
+           }
+           if (val.value === 5){
+               $( '#c1 .l'+key ).addClass('five-clubs');
+           }
+           if (val.value === 6){
+               $( '#c1 .l'+key ).addClass('six-clubs');
+           }
+           if (val.value === 7){
+               $( '#c1 .l'+key ).addClass('seven-clubs');
+           }
+           if (val.value === 8){
+               $( '#c1 .l'+key ).addClass('eight-clubs');
+           }
+           if (val.value === 9){
+               $( '#c1 .l'+key ).addClass('nine-clubs');
+           }
+           if (val.value === 10){
+               $( '#c1 .l'+key ).addClass('ten-clubs');
+           }
+           if (val.value === 11){
+               $( '#c1 .l'+key ).addClass('jack-clubs');
+           }
+           if (val.value === 12){
+               $( '#c1 .l'+key ).addClass('queen-clubs');
+           }
+           if (val.value === 13){
+               $( '#c1 .l'+key ).addClass('king-clubs');
+           }
+       }
+       else{
+         $( '#c1 .l'+key ).html(val.value + val.suit);
+       }
         });
 
      $.each(game.cols[2], function( key, val ) {
-            $( '#c2 .l'+key ).html(val.value + val.suit);
+       if (val.suit === 'Spades'){
+           if (val.value === 1){
+               $( '#c2 .l'+key ).addClass('ace-spades');
+           }
+           else if (val.value === 2){
+               $( '#c2 .l'+key ).addClass('two-spades');
+           }
+           if (val.value === 3){
+               $( '#c2 .l'+key ).addClass('three-spades');
+           }
+           if (val.value === 4){
+               $( '#c2 .l'+key ).addClass('four-spades');
+           }
+           if (val.value === 5){
+               $( '#c2 .l'+key ).addClass('five-spades');
+           }
+           if (val.value === 6){
+               $( '#c2 .l'+key ).addClass('six-spades');
+           }
+           if (val.value === 7){
+               $( '#c2 .l'+key ).addClass('seven-spades');
+           }
+           if (val.value === 8){
+               $( '#c2 .l'+key ).addClass('eight-spades');
+           }
+           if (val.value === 9){
+               $( '#c2 .l'+key ).addClass('nine-spades');
+           }
+           if (val.value === 10){
+               $( '#c2 .l'+key ).addClass('ten-spades');
+           }
+           if (val.value === 11){
+               $( '#c2 .l'+key ).addClass('jack-spades');
+           }
+           if (val.value === 12){
+               $( '#c2 .l'+key ).addClass('queen-spades');
+           }
+           if (val.value === 13){
+               $( '#c2 .l'+key ).addClass('king-spades');
+           }
+       }
+       else if (val.suit === 'Hearts'){
+           if (val.value === 1){
+               $( '#c2 .l'+key ).addClass('ace-hearts');
+           }
+           if (val.value === 2){
+               $( '#c2 .l'+key ).addClass('two-hearts');
+           }
+           if (val.value === 3){
+               $( '#c2 .l'+key ).addClass('three-hearts');
+           }
+           if (val.value === 4){
+               $( '#c2 .l'+key ).addClass('four-hearts');
+           }
+           if (val.value === 5){
+               $( '#c2 .l'+key ).addClass('five-hearts');
+           }
+           if (val.value === 6){
+               $( '#c2 .l'+key ).addClass('six-hearts');
+           }
+           if (val.value === 7){
+               $( '#c2 .l'+key ).addClass('seven-hearts');
+           }
+           if (val.value === 8){
+               $( '#c2 .l'+key ).addClass('eight-hearts');
+           }
+           if (val.value === 9){
+               $( '#c2 .l'+key ).addClass('nine-hearts');
+           }
+           if (val.value === 10){
+               $( '#c2 .l'+key ).addClass('ten-hearts');
+           }
+           if (val.value === 11){
+               $( '#c2 .l'+key ).addClass('jack-hearts');
+           }
+           if (val.value === 12){
+               $( '#c2 .l'+key ).addClass('queen-hearts');
+           }
+           if (val.value === 13){
+               $( '#c2 .l'+key ).addClass('king-hearts');
+           }
+       }
+       else if (val.suit === 'Diamonds'){
+           if (val.value === 1){
+               $( '#c2 .l'+key ).addClass('ace-diamonds');
+           }
+           if (val.value === 2){
+               $( '#c2 .l'+key ).addClass('two-diamonds');
+           }
+           if (val.value === 3){
+               $( '#c2 .l'+key ).addClass('three-diamonds');
+           }
+           if (val.value === 4){
+               $( '#c2 .l'+key ).addClass('four-diamonds');
+           }
+           if (val.value === 5){
+               $( '#c2 .l'+key ).addClass('five-diamonds');
+           }
+           if (val.value === 6){
+               $( '#c2 .l'+key ).addClass('six-diamonds');
+           }
+           if (val.value === 7){
+               $( '#c2 .l'+key ).addClass('seven-diamonds');
+           }
+           if (val.value === 8){
+               $( '#c2 .l'+key ).addClass('eight-diamonds');
+           }
+           if (val.value === 9){
+               $( '#c2 .l'+key ).addClass('nine-diamonds');
+           }
+           if (val.value === 10){
+               $( '#c2 .l'+key ).addClass('ten-diamonds');
+           }
+           if (val.value === 11){
+               $( '#c2 .l'+key ).addClass('jack-diamonds');
+           }
+           if (val.value === 12){
+               $( '#c2 .l'+key ).addClass('queen-diamonds');
+           }
+           if (val.value === 13){
+               $( '#c2 .l'+key ).addClass('king-diamonds');
+           }
+       }
+       else if (val.suit === 'Clubs'){
+           if (val.value === 1){
+               $( '#c2 .l'+key ).addClass('ace-clubs');
+           }
+           if (val.value === 2){
+               $( '#c2 .l'+key ).addClass('two-clubs');
+           }
+           if (val.value === 3){
+               $( '#c2 .l'+key ).addClass('three-clubs');
+           }
+           if (val.value === 4){
+               $( '#c2 .l'+key ).addClass('four-clubs');
+           }
+           if (val.value === 5){
+               $( '#c2 .l'+key ).addClass('five-clubs');
+           }
+           if (val.value === 6){
+               $( '#c2 .l'+key ).addClass('six-clubs');
+           }
+           if (val.value === 7){
+               $( '#c2 .l'+key ).addClass('seven-clubs');
+           }
+           if (val.value === 8){
+               $( '#c2 .l'+key ).addClass('eight-clubs');
+           }
+           if (val.value === 9){
+               $( '#c2 .l'+key ).addClass('nine-clubs');
+           }
+           if (val.value === 10){
+               $( '#c2 .l'+key ).addClass('ten-clubs');
+           }
+           if (val.value === 11){
+               $( '#c2 .l'+key ).addClass('jack-clubs');
+           }
+           if (val.value === 12){
+               $( '#c2 .l'+key ).addClass('queen-clubs');
+           }
+           if (val.value === 13){
+               $( '#c2 .l'+key ).addClass('king-clubs');
+           }
+       }
+       else{
+         $( '#c2 .l'+key ).html(val.value + val.suit);
+       }
         });
 
      $.each(game.cols[3], function( key, val ) {
-            $( '#c3 .l'+key ).html(val.value + val.suit);
+       if (val.suit === 'Spades'){
+           if (val.value === 1){
+               $( '#c3 .l'+key ).addClass('ace-spades');
+           }
+           else if (val.value === 2){
+               $( '#c3 .l'+key ).addClass('two-spades');
+           }
+           if (val.value === 3){
+               $( '#c3 .l'+key ).addClass('three-spades');
+           }
+           if (val.value === 4){
+               $( '#c3 .l'+key ).addClass('four-spades');
+           }
+           if (val.value === 5){
+               $( '#c3 .l'+key ).addClass('five-spades');
+           }
+           if (val.value === 6){
+               $( '#c3 .l'+key ).addClass('six-spades');
+           }
+           if (val.value === 7){
+               $( '#c3 .l'+key ).addClass('seven-spades');
+           }
+           if (val.value === 8){
+               $( '#c3 .l'+key ).addClass('eight-spades');
+           }
+           if (val.value === 9){
+               $( '#c3 .l'+key ).addClass('nine-spades');
+           }
+           if (val.value === 10){
+               $( '#c3 .l'+key ).addClass('ten-spades');
+           }
+           if (val.value === 11){
+               $( '#c3 .l'+key ).addClass('jack-spades');
+           }
+           if (val.value === 12){
+               $( '#c3 .l'+key ).addClass('queen-spades');
+           }
+           if (val.value === 13){
+               $( '#c3 .l'+key ).addClass('king-spades');
+           }
+       }
+       else if (val.suit === 'Hearts'){
+           if (val.value === 1){
+               $( '#c3 .l'+key ).addClass('ace-hearts');
+           }
+           if (val.value === 2){
+               $( '#c3 .l'+key ).addClass('two-hearts');
+           }
+           if (val.value === 3){
+               $( '#c3 .l'+key ).addClass('three-hearts');
+           }
+           if (val.value === 4){
+               $( '#c3 .l'+key ).addClass('four-hearts');
+           }
+           if (val.value === 5){
+               $( '#c3 .l'+key ).addClass('five-hearts');
+           }
+           if (val.value === 6){
+               $( '#c3 .l'+key ).addClass('six-hearts');
+           }
+           if (val.value === 7){
+               $( '#c3 .l'+key ).addClass('seven-hearts');
+           }
+           if (val.value === 8){
+               $( '#c3 .l'+key ).addClass('eight-hearts');
+           }
+           if (val.value === 9){
+               $( '#c3 .l'+key ).addClass('nine-hearts');
+           }
+           if (val.value === 10){
+               $( '#c3 .l'+key ).addClass('ten-hearts');
+           }
+           if (val.value === 11){
+               $( '#c3 .l'+key ).addClass('jack-hearts');
+           }
+           if (val.value === 12){
+               $( '#c3 .l'+key ).addClass('queen-hearts');
+           }
+           if (val.value === 13){
+               $( '#c3 .l'+key ).addClass('king-hearts');
+           }
+       }
+       else if (val.suit === 'Diamonds'){
+           if (val.value === 1){
+               $( '#c3 .l'+key ).addClass('ace-diamonds');
+           }
+           if (val.value === 2){
+               $( '#c3 .l'+key ).addClass('two-diamonds');
+           }
+           if (val.value === 3){
+               $( '#c3 .l'+key ).addClass('three-diamonds');
+           }
+           if (val.value === 4){
+               $( '#c3 .l'+key ).addClass('four-diamonds');
+           }
+           if (val.value === 5){
+               $( '#c3 .l'+key ).addClass('five-diamonds');
+           }
+           if (val.value === 6){
+               $( '#c3 .l'+key ).addClass('six-diamonds');
+           }
+           if (val.value === 7){
+               $( '#c3 .l'+key ).addClass('seven-diamonds');
+           }
+           if (val.value === 8){
+               $( '#c3 .l'+key ).addClass('eight-diamonds');
+           }
+           if (val.value === 9){
+               $( '#c3 .l'+key ).addClass('nine-diamonds');
+           }
+           if (val.value === 10){
+               $( '#c3 .l'+key ).addClass('ten-diamonds');
+           }
+           if (val.value === 11){
+               $( '#c3 .l'+key ).addClass('jack-diamonds');
+           }
+           if (val.value === 12){
+               $( '#c3 .l'+key ).addClass('queen-diamonds');
+           }
+           if (val.value === 13){
+               $( '#c3 .l'+key ).addClass('king-diamonds');
+           }
+       }
+       else if (val.suit === 'Clubs'){
+           if (val.value === 1){
+               $( '#c3 .l'+key ).addClass('ace-clubs');
+           }
+           if (val.value === 2){
+               $( '#c3 .l'+key ).addClass('two-clubs');
+           }
+           if (val.value === 3){
+               $( '#c3 .l'+key ).addClass('three-clubs');
+           }
+           if (val.value === 4){
+               $( '#c3 .l'+key ).addClass('four-clubs');
+           }
+           if (val.value === 5){
+               $( '#c3 .l'+key ).addClass('five-clubs');
+           }
+           if (val.value === 6){
+               $( '#c3 .l'+key ).addClass('six-clubs');
+           }
+           if (val.value === 7){
+               $( '#c3 .l'+key ).addClass('seven-clubs');
+           }
+           if (val.value === 8){
+               $( '#c3 .l'+key ).addClass('eight-clubs');
+           }
+           if (val.value === 9){
+               $( '#c3 .l'+key ).addClass('nine-clubs');
+           }
+           if (val.value === 10){
+               $( '#c3 .l'+key ).addClass('ten-clubs');
+           }
+           if (val.value === 11){
+               $( '#c3 .l'+key ).addClass('jack-clubs');
+           }
+           if (val.value === 12){
+               $( '#c3 .l'+key ).addClass('queen-clubs');
+           }
+           if (val.value === 13){
+               $( '#c3 .l'+key ).addClass('king-clubs');
+           }
+       }
+       else{
+         $( '#c1 .l'+key ).html(val.value + val.suit);
+       }
         });
 
 
