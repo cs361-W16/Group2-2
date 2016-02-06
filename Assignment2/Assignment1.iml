@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<module version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <orderEntry type="sourceFolder" forTests="false" />
-=======
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -126,6 +121,5 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.json:org.json:chargebee-1.0" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1.1" level="project" />
->>>>>>> e5a99262757ed0c6ee3e3b860dc94f08f504b7a5
   </component>
 </module>
