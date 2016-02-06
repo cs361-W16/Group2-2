@@ -1,7 +1,6 @@
 tr{
-width:100%;
+width:500px;
 }
-
 
 td{
 width:100px;
@@ -16,4 +15,17 @@ font-weight: bold;
 .cardLocation{
 width: 100px;
 background-color:#F0F0F0;
+<<<<<<< HEAD
+=======
+}
+
+.dropArea{
+    float: left;
+    outline-width: 1px;
+    width: 100px;
+    outline-color: black;
+    outline-style: dashed;
+    height: 145px;
+    margin: 20px;
+>>>>>>> f6967b0d99225608d317b77aa3d9ca7dfb930e02
 }
