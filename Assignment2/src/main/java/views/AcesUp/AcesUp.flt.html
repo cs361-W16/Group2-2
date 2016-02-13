@@ -1,247 +1,73 @@
-<h1>Aces Up</h1>
+<div id="title">Aces Up</div>
 
 <link href="/assets/css/AcesUp.css" rel="stylesheet">
 <script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
 
 
-<body>
-
 <script type="text/javascript" src="/assets/javascript/dragula.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/dragula.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
 
-
-<script>
-    $( "#card10" ).click(function() {
-  alert( "Handler for .click() called." );
-});
-</script>
-
-<table>
-    <tr class="title">
-        <td>Column0</td>
-        <td >Column1</td>
-        <td >Column2</td>
-        <td >Column3</td>
-    </tr>
-
-    <tr><td class="columnOfCards" id="c0">
-        <table>
-            <tr id="c10"><td class="cardLocation l0" ></td></tr>
-            <tr id="c11"><td class="cardLocation l1" ></td></tr>
-            <tr id="c12"><td class="cardLocation l2" ></td></tr>
-            <tr id="c13"><td class="cardLocation l3" ></td></tr>
-            <tr id="c14"><td class="cardLocation l4" ></td></tr>
-            <tr id="c15"><td class="cardLocation l5" ></td></tr>
-            <tr id="c16"><td class="cardLocation l6" ></td></tr>
-            <tr id="c17"><td class="cardLocation l7" ></td></tr>
-            <tr id="c18"><td class="cardLocation l8" ></td></tr>
-            <tr id="c19"><td class="cardLocation l9" ></td></tr>
-            <tr id="c110"><td class="cardLocation l10" ></td></tr>
-            <tr id="c111"><td class="cardLocation l11" ></td></tr>
-            <tr id="c112"><td class="cardLocation l12" ></td></tr>
-            <tr id="c113"><td class="cardLocation l13" ></td></tr>
-        </table>
-    </td>
-        <td class="columnOfCards" id="c1" >
-            <table>
-                <tr id="c20"><td class="cardLocation l0" ></td></tr>
-                <tr id="c21"><td class="cardLocation l1" ></td></tr>
-                <tr id="c22"><td class="cardLocation l2" ></td></tr>
-                <tr id="c23"><td class="cardLocation l3" ></td></tr>
-                <tr id="c24"><td class="cardLocation l4" ></td></tr>
-                <tr id="c25"><td class="cardLocation l5" ></td></tr>
-                <tr id="c26"><td class="cardLocation l6" ></td></tr>
-                <tr id="c27"><td class="cardLocation l7" ></td></tr>
-                <tr id="c28"><td class="cardLocation l8" ></td></tr>
-                <tr id="c29"><td class="cardLocation l9" ></td></tr>
-                <tr id="c210"><td class="cardLocation l10" ></td></tr>
-                <tr id="c211"><td class="cardLocation l11" ></td></tr>
-                <tr id="c212"><td class="cardLocation l12" ></td></tr>
-                <tr id="c213"><td class="cardLocation l13" ></td></tr>
-            </table>
-        </td>
-        <td class="columnOfCards" id="c2">
-            <table>
-                <tr id="c30"><td class="cardLocation l0" ></td></tr>
-                <tr id="c31"><td class="cardLocation l1" ></td></tr>
-                <tr id="c32"><td class="cardLocation l2" ></td></tr>
-                <tr id="c33"><td class="cardLocation l3" ></td></tr>
-                <tr id="c34"><td class="cardLocation l4" ></td></tr>
-                <tr id="c35"><td class="cardLocation l5" ></td></tr>
-                <tr id="c36"><td class="cardLocation l6" ></td></tr>
-                <tr id="c37"><td class="cardLocation l7" ></td></tr>
-                <tr id="c38"><td class="cardLocation l8" ></td></tr>
-                <tr id="c39"><td class="cardLocation l9" ></td></tr>
-                <tr id="c310"><td class="cardLocation l10" ></td></tr>
-                <tr id="c311"><td class="cardLocation l11" ></td></tr>
-                <tr id="c312"><td class="cardLocation l12" ></td></tr>
-                <tr id="c313"><td class="cardLocation l13" ></td></tr>
-            </table>
-        </td>
-        <td class="columnOfCards" id="c3">
-            <table>
-                <tr id="c40"><td class="cardLocation l0" ></td></tr>
-                <tr id="c41"><td class="cardLocation l1" ></td></tr>
-                <tr id="c42"><td class="cardLocation l2" ></td></tr>
-                <tr id="c43"><td class="cardLocation l3" ></td></tr>
-                <tr id="c44"><td class="cardLocation l4" ></td></tr>
-                <tr id="c45"><td class="cardLocation l5" ></td></tr>
-                <tr id="c46"><td class="cardLocation l6" ></td></tr>
-                <tr id="c47"><td class="cardLocation l7" ></td></tr>
-                <tr id="c48"><td class="cardLocation l8" ></td></tr>
-                <tr id="c49"><td class="cardLocation l9" ></td></tr>
-                <tr id="c410"><td class="cardLocation l10" ></td></tr>
-                <tr id="c411"><td class="cardLocation l11" ></td></tr>
-                <tr id="c412"><td class="cardLocation l12" ></td></tr>
-                <tr id="c413"><td class="cardLocation l13" ></td></tr>
-            </table>
-        </td>
-    </tr>
-</table>
-
-
-
-
-
-
-<button id="dealButton" style="margin-left:90%">Deal</button>
-<BR><button id="Remove1" >Column1 Remove</button><button id="Remove2" >Column2 Remove</button><button id="Remove3" >Column3 Remove</button><button id="Remove4" >Column4 Remove</button>
-
-<BR>Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton">Move</button>
-
-<br><br>
-
-<h1>Drag and Drop Card</h1>
-
 <div>
+    <div id="colOne" class="dropArea"></div>
 
-    <div id="one" class="dropArea">
-        <img src="/assets/images/2_of_hearts.png" id="Card3" style="width: 100px;">
-        <img src="/assets/images/3_of_clubs.png" id="Card3" style="width: 100px;">
-    </div>
+    <div id="colTwo" class="dropArea"></div>
 
-    <div id="two" class="dropArea">
-        <img src="/assets/images/2_of_diamonds.png" id="Card3" style="width: 100px;">
-        <img src="/assets/images/8_of_clubs.png" id="Card3" style="width: 100px;">
-        <img src="/assets/images/9_of_clubs.png" id="Card3" style="width: 100px;">
-        <img src="/assets/images/3_of_hearts.png" id="Card3" style="width: 100px;">
-    </div>
+    <div id="colThree" class="dropArea"></div>
 
-    <div id="three" class="dropArea">
-        <img src="/assets/images/2_of_clubs.png" id="Card3" style="width: 100px;">
-        <img src="/assets/images/4_of_clubs.png" id="Card3" style="width: 100px;">
-        <img src="/assets/images/4_of_diamonds.png" id="Card3" style="width: 100px;">
-    </div>
+    <div id="colFour" class="dropArea"></div>
 
-    <div id="four" class="dropArea">
-        <img src="/assets/images/2_of_spades.png" id="Card3" style="width: 100px;">
-    </div>
+    <div id="dealButton"><button>Deal</button></div>
+
+    <div id="trash"><img src="/assets/images/Back.png" id="Card3" style="width: 100px;"></img> </div>
+
 </div>
 
-<BR>
 
-<BR>
-
-<table>
+<!--
+<table align="center">
+    <tr class="title">
+        <td>Column 1</td>
+        <td >Column 2</td>
+        <td >Column 3</td>
+        <td >Column 4</td>
+    </tr>
     <tr>
-        <td   id="trash" style="width:100px; background-color: Blue; color: White;">Trash</td>
+        <td class="columnOfCards" id="c0" value="0"></td>
+        <td class="columnOfCards" id="c1" value="1"></td>
+        <td class="columnOfCards" id="c2" value="2"></td>
+        <td class="columnOfCards" id="c3" value="3"></td>
     </tr>
 </table>
 
 
-<script>
-    dragula([document.querySelector('#c10'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c11'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c12'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c13'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c14'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c15'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c16'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c17'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c18'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c19'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c110'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c111'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c112'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c113'), document.querySelector('#trash')]);
+<div id="everything"><BR><button id="Remove1" >Column 0 Remove</button><button id="Remove2" >Column 1 Remove</button><button id="Remove3" >Column 2 Remove</button><button id="Remove4" >Column 3 Remove</button>
+    <div id="moveText"><BR>Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton">Move</button></div></div>
 
-    dragula([document.querySelector('#c20'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c21'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c22'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c23'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c24'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c25'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c26'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c27'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c28'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c29'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c210'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c211'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c212'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c213'), document.querySelector('#trash')]);
-
-    dragula([document.querySelector('#c30'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c31'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c32'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c33'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c34'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c35'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c36'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c37'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c38'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c39'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c310'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c311'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c312'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c313'), document.querySelector('#trash')]);
-
-    dragula([document.querySelector('#c40'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c41'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c42'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c43'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c44'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c45'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c46'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c47'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c48'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c49'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c410'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c411'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c412'), document.querySelector('#trash')]);
-    dragula([document.querySelector('#c413'), document.querySelector('#trash')]);
+-->
 
 
-
-</script>
 
 <script>
 
     var game;
 
     function display(game) {
-    console.log(game);
-
-    $( '.columnOfCards .cardLocation' ).html("");
+        console.log(game);
+        $( '.columnOfCards' ).html("");
 
         $.each(game.cols[0], function( key, val ) {
-            $( '#c0 .l'+key ).html(val.value + val.suit);
+            $( '#colOne' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
         });
-
-     $.each(game.cols[1], function( key, val ) {
-            $( '#c1 .l'+key ).html(val.value + val.suit);
+        $.each(game.cols[1], function( key, val ) {
+            $( '#colTwo' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
         });
-
-     $.each(game.cols[2], function( key, val ) {
-            $( '#c2 .l'+key ).html(val.value + val.suit);
+        $.each(game.cols[2], function( key, val ) {
+            $( '#colThree' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
         });
-
-     $.each(game.cols[3], function( key, val ) {
-            $( '#c3 .l'+key ).html(val.value + val.suit);
+        $.each(game.cols[3], function( key, val ) {
+            $( '#colFour' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
         });
-
-
-
     }
 
     $.getJSON("http://localhost:8080/game", function( data ) {
@@ -251,47 +77,32 @@
 
 
     $("#dealButton").click(function(){
-    $.ajax({
-      type: "POST",
-      url: "/dealGame",
-      data: JSON.stringify(game),
-      success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
-            game = data;
-            display(data);},
-      contentType:"application/json; charset=utf-8",
-      dataType:"json",
-    });
+        $.ajax({
+          type: "POST",
+          url: "/dealGame",
+          data: JSON.stringify(game),
+          success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+                game = data;
+                display(data);},
+          contentType:"application/json; charset=utf-8",
+          dataType:"json",
+        });
     });
 
 
     function removeCard(colNumber){
-    $.ajax({
-    type: "POST",
-    url: "/removeCard/"+colNumber,
-    data: JSON.stringify(game),
-    success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
-    game = data;
-    display(data);},
-    contentType:"application/json; charset=utf-8",
-    dataType:"json",
-    });
+        $.ajax({
+        type: "POST",
+        url: "/removeCard/"+colNumber,
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        game = data;
+        display(data);},
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+        });
 
     }
-
-
-    $("#Remove1").click(function(){
-        removeCard(0);
-    });
-    $("#Remove2").click(function(){
-        removeCard(1);
-    });
-    $("#Remove3").click(function(){
-        removeCard(2);
-    });
-    $("#Remove4").click(function(){
-        removeCard(3);
-    });
-
 
     $("#moveButton").click(function(){
     var colFrom = $("#from_col").val();
@@ -308,7 +119,7 @@
     });
     });
 
-    dragula([document.querySelector('#one'), document.querySelector('#two'),document.querySelector('#three'),document.querySelector('#four')]);
+    dragula([document.querySelector('#colOne'), document.querySelector('#colTwo'),document.querySelector('#colThree'),document.querySelector('#colFour'),document.querySelector('#trash')]);
 
 
 
