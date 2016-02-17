@@ -20,7 +20,7 @@
 
     <div id="dealButton"><button>Deal</button></div>
 
-    <div id="trash"><img src="/assets/images/trash.png" id="Card3""></img> </div>
+    <div id="trash"><img src="/assets/images/trash.png" style="width:13%;height:20%"> </div>
 
 </div>
 
@@ -48,7 +48,9 @@
 
 -->
 
-
+<!--
+    make the draggable move
+-->
 
 <script>
 
@@ -98,7 +100,7 @@
         });
     });
 
-    function removeCard(colNumber){
+    function removeCard(trash){
         $.ajax({
         type: "POST",
         url: "/removeCard/"+colNumber,
@@ -127,11 +129,14 @@
     });
     });
 
-    dragula([document.querySelector('#colOne'), document.querySelector('#colTwo'),document.querySelector('#colThree'),document.querySelector('#colFour')]);
-
+    dragula(
+        [document.querySelector('#colOne'),
+        document.querySelector('#colTwo'),
+        document.querySelector('#colThree'),
+        document.querySelector('#colFour')], {
+            removeOnSpill: true
+        }
+    );
 </script>
-
-
-
 </body>
 </html>
