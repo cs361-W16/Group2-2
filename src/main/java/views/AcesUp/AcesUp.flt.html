@@ -18,9 +18,11 @@
 
     <div id="colFour" class="dropArea"></div>
 
+    <div id="trash"><img src="/assets/images/trash.png" style="width:13%; height:25%"></div>
+
     <div id="dealButton"><button>Deal</button></div>
 
-    <div id="trash"><img src="/assets/images/trash.png" id="Card3""></img> </div>
+
 
 </div>
 
@@ -51,6 +53,10 @@
 
 
 <script>
+
+    dragula([document.getElementById(colThree)], {
+      removeOnSpill: true
+    });
 
     var game;
 
