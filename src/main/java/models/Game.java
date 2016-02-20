@@ -8,8 +8,7 @@ import java.util.Random;
  * Created by michaelhilton on 1/25/16.
  */
 
-public class Game {
-
+public abstract class Game {
 
     public boolean error;
 
@@ -24,8 +23,12 @@ public class Game {
         cols.add(new ArrayList<Card>());
         // Thanks to group 5 (we have the permission to borrow)
         error = false;
+        // Call buildDeck here?
     }
 
+    public abstract void buildDeck();
+
+    /*
     public void buildDeck(char answer) {
 
         // For normal version, we have: 2, 3, 4, 5, 6, 7, 8, 9, J, Q, K, A
@@ -45,13 +48,14 @@ public class Game {
         else if (answer == 'S') {
             // i starts from 1 and i < 12 means until 10 (each suit 10 cards)
             for (int i = 1; i < 12; i++) {
-                deck.add(new Card(i, Suit.Wood));
-                deck.add(new Card(i, Suit.Cup));
-                deck.add(new Card(i, Suit.Sword));
-                deck.add(new Card(i, Suit.Coin));
+                deck.add(new Card(i, Suit.Clubs));
+                deck.add(new Card(i, Suit.Cups));
+                deck.add(new Card(i, Suit.Swords));
+                deck.add(new Card(i, Suit.Coins));
             }
         }
     }
+    */
 
     public void shuffle() {
         long seed = System.nanoTime();
@@ -122,6 +126,7 @@ public class Game {
     }
 
     private void addCardToCol(int colTo, Card cardToMove) {
+
         cols.get(colTo).add(cardToMove);
     }
 
