@@ -9,7 +9,7 @@ text-align:center;
 
 body{
 font-family: 'Oswald', sans-serif;
-background-image: url(/assets/bg3.jpg);
+background-image: url("/assets/images/wallpaper.png");
 color: white;
 background-attachment: fixed;
 background-repeat: no-repeat;
@@ -37,7 +37,7 @@ margin-right: auto;
 }
 
 #dealButton{
-text-align: center;
+/*text-align: center;*/
 padding-top: 10px;
 }
 
@@ -49,10 +49,6 @@ margin-right: auto;
 
 .theCards {
     align: center;
-}
-
-.title{
-
 }
 
 .cardLocation{
@@ -69,4 +65,3 @@ background-color:#F0F0F0;
     height: 400px;
     margin: 20px;
 }
-
