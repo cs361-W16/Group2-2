@@ -8,11 +8,14 @@ text-align:center;
 }
 
 body{
-background-image: url(/assets/bg.jpg);
+font-family: 'Oswald', sans-serif;
+background-image: url(/assets/bg3.jpg);
 color: white;
-background-size: cover;
 background-attachment: fixed;
-font-family: "Impact", Charcoal, sans-serif;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+background-origin: content-box
+
 }
 #title,h1{
 text-align: center;
@@ -44,7 +47,9 @@ margin-left: auto;
 margin-right: auto;
 }
 
-
+.theCards {
+    align: center;
+}
 
 .title{
 
@@ -56,7 +61,7 @@ background-color:#F0F0F0;
 }
 
 .dropArea{
-    float: left;
+    float: right;
     outline-width: 1px;
     width: 100px;
 /*    outline-color: black;
