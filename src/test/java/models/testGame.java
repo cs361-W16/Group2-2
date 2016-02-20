@@ -44,13 +44,13 @@ public class testGame {
     // TEST FOR INITIALIZATION
     // US VERSION
     @Test
-    public void testGameInit(){
+/*    public void testGameInit(){
         usGame g = new usGame();
         g.buildDeck();
         g.shuffle();
         assertNotEquals(2,g.deck.get(0).getValue());
     }
-
+*/
     // SP VERSION
     public void testGameInitSP(){
         spGame g = new spGame();
