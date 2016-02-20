@@ -12,7 +12,7 @@ public class Game {
     public java.util.List<Card> deck = new ArrayList<>();
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
-
+    public int isSpain = 0;
 
     public Game(){
         cols.add(new ArrayList<Card>());
@@ -21,12 +21,30 @@ public class Game {
         cols.add(new ArrayList<Card>());
     }
 
+    public void isSpanish(int input){
+        if(input == 1) {
+            isSpain = 1;
+        }else{
+            isSpain = 0;
+        }
+    }
+
     public void buildDeck() {
-        for(int i = 2; i < 15; i++){
-            deck.add(new Card(i,Suit.Clubs));
-            deck.add(new Card(i,Suit.Hearts));
-            deck.add(new Card(i,Suit.Diamonds));
-            deck.add(new Card(i,Suit.Spades));
+        if(isSpain == 0) {
+            for (int i = 2; i < 15; i++) {
+                deck.add(new Card(i, Suit.Clubs));
+                deck.add(new Card(i, Suit.Hearts));
+                deck.add(new Card(i, Suit.Diamonds));
+                deck.add(new Card(i, Suit.Spades));
+            }
+        }
+        if(isSpain == 1){
+            for (int i = 2; i < 12; i++) {
+                deck.add(new Card(i, Suit.Clubs));
+                deck.add(new Card(i, Suit.Hearts));
+                deck.add(new Card(i, Suit.Diamonds));
+                deck.add(new Card(i, Suit.Spades));
+            }
         }
     }
 

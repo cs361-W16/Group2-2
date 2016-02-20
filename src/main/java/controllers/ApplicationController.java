@@ -52,6 +52,11 @@ public class ApplicationController {
         return Results.json().render(g);
     }
 
+    public Result isSpanish(Context context, @PathParam("isSpain") int input, Game g){
+        g.isSpanish(input);
+        return  Results.json().render(g);
+    }
+
     public Result removeCard(Context context, @PathParam("column") int colNumber, Game g){
         g.remove(colNumber);
         return  Results.json().render(g);
