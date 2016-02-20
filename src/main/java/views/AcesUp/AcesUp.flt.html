@@ -7,6 +7,7 @@
 <script type="text/javascript" src="/assets/javascript/dragula.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/dragula.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
 <div>
 
@@ -18,21 +19,13 @@
 
     <div id="colFour" class="dropArea"></div>
 
-
+    <div id="trash"><img src="/assets/images/trash.png" style="width:13%; height:25%" align="right"></div>
 
     <div id="dealButton"><button>Deal</button></div>
 
-    <!--
-    <div id="trash"><img src="/assets/images/trash.png" style="width:13%;height:20%"> </div>
-    -->
 </div>
 
-<button id="target">click me</button>
-
-<div style="margin-left: 60%;">
-    <button id="isSpain">Spanish Cards!</button>
-    <button id="isNotSpain">American Cards!</button>
-</div>
+<!--<button id="target" align="center">click me</button>-->
 
 <!--
 <table align="center">
@@ -50,46 +43,17 @@
     </tr>
 </table>
 
--->
+
 <div id="everything"><BR><button id="Remove1" >Column 0 Remove</button><button id="Remove2" >Column 1 Remove</button><button id="Remove3" >Column 2 Remove</button><button id="Remove4" >Column 3 Remove</button>
     <div id="moveText"><BR>Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton">Move</button></div></div>
 
-
+-->
 
 <!--
     make the draggable move
 -->
 
 <script>
-
-    dragula([document.getElementById(colThree)], {
-      removeOnSpill: true
-    });
-    var isSpanish = 0;
-
-    function isSP(isSpain){
-        $.ajax({
-        type: "POST",
-        url: "/IsSP/"+isSpain,
-        data: JSON.stringify(game),
-        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
-        game = data;
-        display(data);},
-        contentType:"application/json; charset=utf-8",
-        dataType:"json",
-        });
-
-    }
-
-    $("#isSpain").click(function(){
-        isSpanish = 1;
-        isSP(1);
-    });
-    $("#isNotSpain").click(function(){
-        isSpanish = 0;
-        isSP(0);
-    });
-
     var game;
 
     function display(game) {
@@ -111,42 +75,10 @@
         $.each(game.cols[3], function( key, val ) {
 
             $( '#colFour' ).append("<img src='assets/images/English/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
-             if(isSpanish == 0){
-                $( '#colOne' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
-             }else{
-                 $( '#colOne' ).append("<img src='assets/SPcards/"+val.suit+val.value+".jpg' alt=nothing class=cardLocation>");
-             }
-        });
-        $.each(game.cols[1], function( key, val ) {
-
-
-             if(isSpanish == 0){
-                $( '#colTwo' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
-             }else{
-                 $( '#colTwo' ).append("<img src='assets/SPcards/"+val.suit+val.value+".jpg' alt=nothing class=cardLocation>");
-             }
-        });
-        $.each(game.cols[2], function( key, val ) {
-
-
-             if(isSpanish == 0){
-                $( '#colThree' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
-             }else{
-                 $( '#colThree' ).append("<img src='assets/SPcards/"+val.suit+val.value+".jpg' alt=nothing class=cardLocation>");
-             }
-        });
-        $.each(game.cols[3], function( key, val ) {
-
-
-             if(isSpanish == 0){
-                $( '#colFour' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
-             }else{
-                 $( '#colFour' ).append("<img src='assets/SPcards/"+val.suit+val.value+".jpg' alt=nothing class=cardLocation>");
-             }
         });
     }
 
-    $.getJSON("http://localhost:8080/game", function( data ) {
+    $.getJSON("http://localhost:8080/usGame", function( data ) {
     display(data);
     game = data;
     });
@@ -168,7 +100,7 @@
         });
     });
 
-    function removeCard(colNumber){
+    function removeCard(trash){
         $.ajax({
         type: "POST",
         url: "/removeCard/"+colNumber,
@@ -181,19 +113,6 @@
         });
 
     }
-
-$("#Remove1").click(function(){
-    removeCard(0);
-});
-$("#Remove2").click(function(){
-    removeCard(1);
-});
-$("#Remove3").click(function(){
-    removeCard(2);
-});
-$("#Remove4").click(function(){
-    removeCard(3);
-});
 
     $("#moveButton").click(function(){
     var colFrom = $("#from_col").val();
@@ -216,7 +135,6 @@ $("#Remove4").click(function(){
         document.querySelector('#colThree'),
         document.querySelector('#colFour')], {
             removeOnSpill: true
-
         }
     );
 </script>
