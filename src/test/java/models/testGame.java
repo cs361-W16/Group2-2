@@ -18,8 +18,17 @@ public class testGame {
     @Test
     public void testGameBuildDeck(){
         Game g = new Game();
+        g.isSpanish(0);
         g.buildDeck();
         assertEquals(52,g.deck.size());
+    }
+
+    @Test
+    public void testGameBuildDeckSP(){
+        Game g = new Game();
+        g.isSpanish(1);
+        g.buildDeck();
+        assertEquals(40,g.deck.size());
     }
 
     @Test
@@ -62,6 +71,20 @@ public class testGame {
         assertEquals(0,g.cols.get(2).size());
     }
 
+    @Test
+    public void isSpanishFunctionT(){
+        Game g = new Game();
+        g.isSpanish(1);
+        assertEquals(1,g.isSpain);
+
+    }
+    @Test
+    public void isSpanishFunctionF(){
+        Game g = new Game();
+        g.isSpanish(0);
+        assertEquals(0,g.isSpain);
+
+    }
 
 
 }
