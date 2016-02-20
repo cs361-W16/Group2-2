@@ -7,7 +7,7 @@
 <script type="text/javascript" src="/assets/javascript/dragula.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/dragula.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
-<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 
 <div>
 
@@ -19,13 +19,13 @@
 
     <div id="colFour" class="dropArea"></div>
 
-    <div id="trash"><img src="/assets/images/trash.png" style="width:13%; height:25%" align="right"></div>
+    <div id="trash"><img src="/assets/images/trash.png" style="width:13%; height:25%"></div>
 
     <div id="dealButton"><button>Deal</button></div>
 
 </div>
 
-<!--<button id="target" align="center">click me</button>-->
+<button id="target">click me</button>
 
 <!--
 <table align="center">
@@ -62,23 +62,23 @@
 
         $.each(game.cols[0], function( key, val ) {
 
-            $( '#colOne' ).append("<img src='assets/images/English/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+            $( '#colOne' ).append("<img src='assets/images/Spanish/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
         });
         $.each(game.cols[1], function( key, val ) {
 
-            $( '#colTwo' ).append("<img src='assets/images/English/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+            $( '#colTwo' ).append("<img src='assets/images/Spanish/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
         });
         $.each(game.cols[2], function( key, val ) {
 
-            $( '#colThree' ).append("<img src='assets/images/English/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+            $( '#colThree' ).append("<img src='assets/images/Spanish/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
         });
         $.each(game.cols[3], function( key, val ) {
 
-            $( '#colFour' ).append("<img src='assets/images/English/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+            $( '#colFour' ).append("<img src='assets/images/Spanish/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
         });
     }
 
-    $.getJSON("http://localhost:8080/usGame", function( data ) {
+    $.getJSON("http://localhost:8080/spGame", function( data ) {
     display(data);
     game = data;
     });
@@ -90,7 +90,7 @@
     $("#dealButton").click(function(){
         $.ajax({
           type: "POST",
-          url: "/dealGame",
+          url: "/dealGameSP",
           data: JSON.stringify(game),
           success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
                 game = data;
