@@ -23,7 +23,6 @@ public class testGame {
         spGame g = new spGame();
         assertNotNull(g);
     }
-
     // TEST FOR DECK
     // US VERSION
     @Test
@@ -42,7 +41,6 @@ public class testGame {
         g.buildDeck();
         assertEquals(40,g.deck.size());
     }
-
     // TEST FOR INITIALIZATION
     // US VERSION
     @Test
