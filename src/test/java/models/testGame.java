@@ -27,11 +27,11 @@ public class testGame {
     // TEST FOR DECK
     // US VERSION
     @Test
-    public void testGameBuildDeck(){
+    public void testGameBuildDeck() {
         usGame g = new usGame();
         // WHY I CANT USE BUILDDECKSP?
         g.buildDeck();
-        assertEquals(52,g.deck.size());
+        assertEquals(52, g.deck.size());
     }
 
     // SP VERSION
@@ -123,7 +123,6 @@ public class testGame {
         g.remove(2);
         assertEquals(0,g.cols.get(2).size());
     }
-
 
 
 }
