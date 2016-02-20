@@ -23,10 +23,9 @@
 
     <div id="dealButton"><button>Deal</button></div>
 
+    <button onclick="english()">Switch to English</button>
+
 </div>
-
-<button id="target">click me</button>
-
 <!--
 <table align="center">
     <tr class="title">
@@ -55,6 +54,10 @@
 
 <script>
     var game;
+
+    function english(){
+      window.open("AcesUp","_parent");
+    }
 
     function display(game) {
         console.log(game);
