@@ -1,0 +1,224 @@
+<div id="title">Aces Up</div>
+
+<link href="/assets/css/AcesUp.css" rel="stylesheet">
+<script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
+
+
+<script type="text/javascript" src="/assets/javascript/dragula.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/css/dragula.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+<div>
+
+    <div id="colOne" class="dropArea"></div>
+
+    <div id="colTwo" class="dropArea"></div>
+
+    <div id="colThree" class="dropArea"></div>
+
+    <div id="colFour" class="dropArea"></div>
+
+
+
+    <div id="dealButton"><button>Deal</button></div>
+
+    <!--
+    <div id="trash"><img src="/assets/images/trash.png" style="width:13%;height:20%"> </div>
+    -->
+</div>
+
+<button id="target">click me</button>
+
+<div style="margin-left: 60%;">
+    <button id="isSpain">Spanish Cards!</button>
+    <button id="isNotSpain">American Cards!</button>
+</div>
+
+<!--
+<table align="center">
+    <tr class="title">
+        <td>Column 1</td>
+        <td >Column 2</td>
+        <td >Column 3</td>
+        <td >Column 4</td>
+    </tr>
+    <tr>
+        <td class="columnOfCards" id="c0" value="0"></td>
+        <td class="columnOfCards" id="c1" value="1"></td>
+        <td class="columnOfCards" id="c2" value="2"></td>
+        <td class="columnOfCards" id="c3" value="3"></td>
+    </tr>
+</table>
+
+-->
+<div id="everything"><BR><button id="Remove1" >Column 0 Remove</button><button id="Remove2" >Column 1 Remove</button><button id="Remove3" >Column 2 Remove</button><button id="Remove4" >Column 3 Remove</button>
+    <div id="moveText"><BR>Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton">Move</button></div></div>
+
+
+
+<!--
+    make the draggable move
+-->
+
+<script>
+
+    dragula([document.getElementById(colThree)], {
+      removeOnSpill: true
+    });
+    var isSpanish = 0;
+
+    function isSP(isSpain){
+        $.ajax({
+        type: "POST",
+        url: "/IsSP/"+isSpain,
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        game = data;
+        display(data);},
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+        });
+
+    }
+
+    $("#isSpain").click(function(){
+        isSpanish = 1;
+        isSP(1);
+    });
+    $("#isNotSpain").click(function(){
+        isSpanish = 0;
+        isSP(0);
+    });
+
+    var game;
+
+    function display(game) {
+        console.log(game);
+        $( '.dropArea' ).html("");
+
+        $.each(game.cols[0], function( key, val ) {
+
+            $( '#colOne' ).append("<img src='assets/images/English/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+        });
+        $.each(game.cols[1], function( key, val ) {
+
+            $( '#colTwo' ).append("<img src='assets/images/English/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+        });
+        $.each(game.cols[2], function( key, val ) {
+
+            $( '#colThree' ).append("<img src='assets/images/English/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+        });
+        $.each(game.cols[3], function( key, val ) {
+
+            $( '#colFour' ).append("<img src='assets/images/English/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+             if(isSpanish == 0){
+                $( '#colOne' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+             }else{
+                 $( '#colOne' ).append("<img src='assets/SPcards/"+val.suit+val.value+".jpg' alt=nothing class=cardLocation>");
+             }
+        });
+        $.each(game.cols[1], function( key, val ) {
+
+
+             if(isSpanish == 0){
+                $( '#colTwo' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+             }else{
+                 $( '#colTwo' ).append("<img src='assets/SPcards/"+val.suit+val.value+".jpg' alt=nothing class=cardLocation>");
+             }
+        });
+        $.each(game.cols[2], function( key, val ) {
+
+
+             if(isSpanish == 0){
+                $( '#colThree' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+             }else{
+                 $( '#colThree' ).append("<img src='assets/SPcards/"+val.suit+val.value+".jpg' alt=nothing class=cardLocation>");
+             }
+        });
+        $.each(game.cols[3], function( key, val ) {
+
+
+             if(isSpanish == 0){
+                $( '#colFour' ).append("<img src='assets/images/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+             }else{
+                 $( '#colFour' ).append("<img src='assets/SPcards/"+val.suit+val.value+".jpg' alt=nothing class=cardLocation>");
+             }
+        });
+    }
+
+    $.getJSON("http://localhost:8080/game", function( data ) {
+    display(data);
+    game = data;
+    });
+
+    $( "#target" ).click(function() {
+      alert( "Nope." );
+    });
+
+    $("#dealButton").click(function(){
+        $.ajax({
+          type: "POST",
+          url: "/dealGame",
+          data: JSON.stringify(game),
+          success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+                game = data;
+                display(data);},
+          contentType:"application/json; charset=utf-8",
+          dataType:"json",
+        });
+    });
+
+    function removeCard(colNumber){
+        $.ajax({
+        type: "POST",
+        url: "/removeCard/"+colNumber,
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        game = data;
+        display(data);},
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+        });
+
+    }
+
+$("#Remove1").click(function(){
+    removeCard(0);
+});
+$("#Remove2").click(function(){
+    removeCard(1);
+});
+$("#Remove3").click(function(){
+    removeCard(2);
+});
+$("#Remove4").click(function(){
+    removeCard(3);
+});
+
+    $("#moveButton").click(function(){
+    var colFrom = $("#from_col").val();
+    var colTo = $("#to_col").val();
+    $.ajax({
+      type: "POST",
+      url: "/moveCard/"+colFrom+"/"+colTo,
+      data: JSON.stringify(game),
+      success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+            game = data;
+            display(data);},
+      contentType:"application/json; charset=utf-8",
+      dataType:"json",
+    });
+    });
+
+    dragula(
+        [document.querySelector('#colOne'),
+        document.querySelector('#colTwo'),
+        document.querySelector('#colThree'),
+        document.querySelector('#colFour')], {
+            removeOnSpill: true
+
+        }
+    );
+</script>
+</body>
+</html>
