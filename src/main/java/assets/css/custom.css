@@ -2,7 +2,7 @@
 -------------------------------------------------- */
 
 .dropArea{
-    float: right;
+    float: left;
     outline-width: 1px;
     width: 100px;
 /*    outline-color: black;

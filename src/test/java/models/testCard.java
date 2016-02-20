@@ -22,7 +22,7 @@ public class testCard {
 
     @Test
     public void testMoveCard(){
-        usGame g = new usGame();
+        Game g = new Game();
         g.buildDeck();
         g.customDeal(0,3,6,9);
         g.remove(2);

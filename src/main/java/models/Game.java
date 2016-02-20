@@ -7,34 +7,30 @@ import java.util.Random;
 /**
  * Created by michaelhilton on 1/25/16.
  */
-
-public abstract class Game {
-
-    public boolean error;
+public class Game {
 
     public java.util.List<Card> deck = new ArrayList<>();
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
+    public int isSpain = 0;
 
     public Game(){
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
-        // Thanks to group 5 (we have the permission to borrow)
-        error = false;
-        // Call buildDeck here?
     }
 
-    public abstract void buildDeck();
+    public void isSpanish(int input){
+        if(input == 1) {
+            isSpain = 1;
+        }else{
+            isSpain = 0;
+        }
+    }
 
-    /*
-    public void buildDeck(char answer) {
-
-        // For normal version, we have: 2, 3, 4, 5, 6, 7, 8, 9, J, Q, K, A
-        // Total: 52
-        if (answer == 'E') {
-            // i < 15 means until 14 (each suit 14 cards)
+    public void buildDeck() {
+        if(isSpain == 0) {
             for (int i = 2; i < 15; i++) {
                 deck.add(new Card(i, Suit.Clubs));
                 deck.add(new Card(i, Suit.Hearts));
@@ -42,20 +38,15 @@ public abstract class Game {
                 deck.add(new Card(i, Suit.Spades));
             }
         }
-
-        // For spanish version, we have: A, 2, 3, 4, 5, 6, 7, J, k (knight), K (King)
-        // Total: 40
-        else if (answer == 'S') {
-            // i starts from 1 and i < 12 means until 10 (each suit 10 cards)
-            for (int i = 1; i < 12; i++) {
+        if(isSpain == 1){
+            for (int i = 2; i < 12; i++) {
                 deck.add(new Card(i, Suit.Clubs));
-                deck.add(new Card(i, Suit.Cups));
-                deck.add(new Card(i, Suit.Swords));
-                deck.add(new Card(i, Suit.Coins));
+                deck.add(new Card(i, Suit.Hearts));
+                deck.add(new Card(i, Suit.Diamonds));
+                deck.add(new Card(i, Suit.Spades));
             }
         }
     }
-    */
 
     public void shuffle() {
         long seed = System.nanoTime();
@@ -99,10 +90,6 @@ public abstract class Game {
             }
             if (removeCard) {
                 this.cols.get(columnNumber).remove(this.cols.get(columnNumber).size() - 1);
-                error = false;
-            }
-            else {
-                error = true;
             }
         }
     }
@@ -126,7 +113,6 @@ public abstract class Game {
     }
 
     private void addCardToCol(int colTo, Card cardToMove) {
-
         cols.get(colTo).add(cardToMove);
     }
 
