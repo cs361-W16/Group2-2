@@ -1,0 +1,67 @@
+tr{
+width:500px;
+}
+td{
+width:50px;
+height:90px;
+text-align:center;
+}
+
+body{
+background-image: url(/assets/bg.jpg);
+color: white;
+background-size: cover;
+background-attachment: fixed;
+font-family: "Impact", Charcoal, sans-serif;
+}
+#title,h1{
+text-align: center;
+
+font-size: 150px;
+}
+
+#moveText{
+font-size: 20px;
+}
+
+img{
+margin-left: auto;
+margin-right: auto;
+}
+#mainTable{
+margin-left: auto;
+margin-right: auto;
+}
+
+#dealButton{
+text-align: center;
+padding-top: 10px;
+}
+
+#everything{
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+
+.title{
+
+}
+
+.cardLocation{
+width: 100px;
+background-color:#F0F0F0;
+}
+
+.dropArea{
+    float: left;
+    outline-width: 1px;
+    width: 100px;
+/*    outline-color: black;
+    outline-style: dashed;*/
+    height: 400px;
+    margin: 20px;
+}
+
